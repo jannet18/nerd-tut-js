@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>code tester</title>
+  </head>
+  <body>
+    <script>
+      function doStuff() {
+        var foods = ["rice", "chicken", "ugali", "cheese"];
+        var myString = "I am hungry for some";
+        for (let i = 0; i < foods.length; i++) {
+          if (i % 2 === 0) {
+            console.log(`${myString} ${foods[i].toUpperCase()}`);
+          } else {
+            console.log(`${myString} ${foods[i]}`);
+          }
+        }
+      }
+      // doStuff()
+      function upperMessage(message) {
+        let upperMessage = message.toUpperCase();
+        console.log(upperMessage);
+      }
+      // upperMessage('hello');
+
+      function addNums(num1, num2) {
+        let sum = num1 + num2;
+        console.log(sum);
+      }
+      //   addNums(7, 8);
+
+      let foods = ["cheese", "burger", "grapes", "pizza"];
+      function randomInt(min, max) {
+        // let numOfValues = max - min + 1;
+        // let randomNum = Math.random();
+        // let randomVal = randomNum * numOfValues;
+        // let roundedRandVal = Math.floor(randomVal);
+        // let finalNum = min + roundedRandVal;
+        // console.log(finalNum);
+        return Math.floor((max - min + 1) * Math.random()) + min;
+      }
+      //   console.log(foods[randomInt(0, 3)]);
+
+      // anonymous func
+      //   function expression
+      let greeting = function () {
+        console.log("hello");
+      };
+      greeting();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .blue {
+        color: blue;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>DOM example</h1>
+    <div id="special">
+      <p class="">Here is a paragraph with unique ID.</p>
+      <p>Here is a paragraph with unique ID.</p>
+      <p class="">Here is a paragraph with unique ID.</p>
+    </div>
+    <form action="">
+      <label for=""><input type="checkbox" />YES</label>
+    </form>
+
+    <script>
+      // #
+      //   document.getElementById("one").style.color = "red";
+      //   ##
+      //   let myParagraphs = document.getElementsByTagName("p");
+
+      //   for (let i = 0; i < myParagraphs.length; i++) {
+      //     myParagraphs[i].style.color = "blue";
+      //   }
+      //   ###
+      //   let myClass = document.getElementsByClassName("special");
+
+      //   for (let i = 0; i < myClass.length; i++) {
+      //     myClass[i].style.color = "red";
+      //   }
+
+      // ####
+
+      //   let myText = document.querySelector("#special .main");
+      //   myText.style.color = "green";
+
+      // #####
+
+      //   let myText = document.querySelectorAll("#special p");
+
+      //   myText.forEach(function (element) {
+      //     element.style.color = "orange";
+      //     element.style.fontSize = "20px";
+      //     element.style.fontWeight = "bold";
+      //   });
+
+      // ######
+      //   //   let myPara = document.getElementById("special");
+      //   let myPara = document.querySelector("p");
+      //   //   myPara.innerHTML = `<p>Here comes trouble</p>`;
+      //   myPara.className = "blue";
+
+      //   let myCheckbox = document.querySelector("input");
+      //   myCheckbox.setAttribute("checked", "checked");
+
+      //   let newPara = document.createElement("p");
+      //   let myText = document.createTextNode("Hello there friend.");
+      //   newPara.appendChild(myText);
+      //   let newText = document.querySelector("div");
+      //   newText.appendChild(newPara);
+
+      //   let newText = document.createElement("p");
+      //   newText.textContent = "Hey!, it's Chrismass";
+      //   newText.style.color = "red";
+      //   newText.fontSize = "20px";
+      //   //   let newTxt = document.querySelector("div");
+      //   document.body.appendChild(newText);
+
+      let removeText = document.querySelector("div");
+      removeText.removeChild(removeText.children[2]);
+    </script>
+  </body>
+</html>
