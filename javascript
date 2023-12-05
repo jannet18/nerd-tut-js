@@ -75,6 +75,6 @@ CREATING ELEMENTS AND TEXT NODES
 - createElement - allows one to create a new HTML element.
 - removingChild()/remove() - method allows one to remove a specified child node from its parent node.
 
-SUMMARY ON DOM(Document Onject Model)
+CAPTURING EVENTS WITH JAVASCRIPT
 
 -
