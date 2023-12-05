@@ -76,5 +76,23 @@ CREATING ELEMENTS AND TEXT NODES
 - removingChild()/remove() - method allows one to remove a specified child node from its parent node.
 
 CAPTURING EVENTS WITH JAVASCRIPT
+EVENT LISTENER
 
--
+- is a function that waits for a specific event to cocur and then respond to the event.
+- events can be user interactions like clicks, key presses, mouse movements or system events like completion of an asycnhronous operation.
+- to set up an event listener you use addEventListener() method.
+
+EVENT OBJECT.
+
+- an object that contains information about an event that has occcurred such as key press, mouse click or a system event.
+- when an event occurs the browser automatically creates an event object and passes it as an arguement to the event handler.(the function that responds to the event).
+  **_ Common properties of the event object: _**
+  `type` - type of the event(click, keydown)
+  `target` - DOM element that triggerd the event.
+  `clientX` and `clientY` - horizontal and vertical coordinates of the event relative to the viewport.
+  `keyCode` - key code of the key that was pressed(for keyboard events)
+
+PREVENTING DEFAULT BEHAVIOUR
+
+- event.preventDefault() - crucial method in js often used in conjuction with event handling.
+- used to prevent the default action associated with an event from being executed.
