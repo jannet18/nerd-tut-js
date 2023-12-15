@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Testing scope in JavaScript</h1>
+    <p>Here is a paragraph</p>
+    <p>Here is another paragraph</p>
+    <p>Here is the third paragraph</p>
+    <script>
+      // let aVariable = "This is a global scope";
+      // function testScope() {
+      //   let aVariable = "This is a local scope.";
+      // }
+      // testScope();
+      // console.log(aVariable);
+
+      // **(IIFE)**
+      // (function () {
+      //   let myPs = document.querySelectorAll("p");
+
+      //   for (let i = 0; i < myPs.length; i++) {
+      //     myPs[i].style.color = "red";
+      //   }
+      // })();
+
+      // ** "use strict" **
+      newVar = "not properly defined.";
+      console.log(newVar);
+    </script>
+  </body>
+</html>
