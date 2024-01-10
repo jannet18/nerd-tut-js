@@ -1,0 +1,31 @@
+- Higher order functions.
+
+* Concept in programming where functions take other functions as arguements or return them as results.
+* In Js functions are treated as first-class citizens, they can be treated as values,passed as arguements ot other functions and returned as values from functions.
+* .map() - a function that takes an array of values and applies a transformation to each value in the array.it does not mutate the original array
+  ** implicit return - the value is automatically returned without the need for the return keyword.
+  const arr = [ 1, 2,3,4]
+  const output = arr.map((num) => num+=10)
+  ** Implicit type Conversion \*\*
+* also known as coercion - occurrs when a programming language automatically converts one data type to another without explicit instructions from the programmer.
+
+** Explicit return **
+
+- requires the use of a return keyword to specify the value the function should return.
+- block statements with no explicit return , iplicitly returns undefined by default
+
+\*\* EXPLICIT TYPE CONVERSION
+
+- occurs when a programmer explicitly converts a value from one data value to another using functions or operations.
+  const numString = '42';
+  const num = parseInt(numString) - explicitly converts a string to an integer.
+
+---
+
+- what is JavaScript - a programming language that is used to make websites more interactive and dynamic.
+  what is React - a javascript library for building user interfaces esp single page applications where you want a dynamic and interactive experience.
+- what is an API(Application Programming Interface) - a set of programming tools and instructions that allow two or more programs to communicate with each other.
+
+---
+
+- Flattening an array refers to the process of converting a nested array in to a single level array.

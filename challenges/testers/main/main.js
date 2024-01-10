@@ -3,7 +3,7 @@ const radius = [1, 2, 3, 4];
 const users = [
   { firstname: "John", lastname: "Doe", age: 25 },
   { firstname: "Jake", lastname: "Doe", age: 25 },
-  { firstname: "Leah", lastname: "Doe", age: 25 },
+  { firstname: "Leah", lastname: "Doe", age: 35 },
   { firstname: "Jack", lastname: "Doe", age: 25 },
 ];
 
@@ -57,5 +57,12 @@ const output = radius.map((item) => (item += 10));
 const result = users.map((user) => {
   return user.firstname + " " + user.lastname;
 });
-console.log(radius);
-console.log(result);
+
+// .filter()
+const oddNum = radius.filter((num) => num % 2);
+// console.log(oddNum);
+
+const ageD = users.filter((user) => {
+  return user.age > 30;
+});
+// console.log(ageD);
