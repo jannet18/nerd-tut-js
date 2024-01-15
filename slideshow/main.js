@@ -14,7 +14,7 @@
     if (currentImage > myImages.length - 1) {
       currentImage = 0;
     }
-    document.getElementById("myImage").src = myImages.currentImage;
+    document.getElementById("myImage").src = myImages[currentImage];
   }
 
   function previousPhoto() {
@@ -24,4 +24,4 @@
     }
     document.getElementById("myImage").src = myImages[currentImage];
   }
-});
+})();
