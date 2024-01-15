@@ -18,7 +18,7 @@ JAVASCRIPT VARIABLES
   ARRAYS
 
 - containers with sub-containers.
-- basic ways to explicitly create an array ij JS
+- basic ways to explicitly create an array in JS
   var colors = new Array('red', 'green', 'blue');
   var colors = ['red', 'green', 'blue']
 

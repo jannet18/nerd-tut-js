@@ -29,3 +29,9 @@
 ---
 
 - Flattening an array refers to the process of converting a nested array in to a single level array.
+
+An array of 99 elements contains integers from 1 to 100 with one missing element. Find the missing element.
+/ June 19, 2012
+// You have a 100 coins laying flat on a table, each with a head side and a tail side. 10 of them are heads up, 90 are tails up. You can't feel, see or in any other way find out which side is up. Split the coins into two piles such that there are the same number of heads in each pile.
+Given an array of numbers, replace each number with the product of all the numbers in the array except the number itself *without* using division.
+Implement a method to determine whether a string is a palindrome.
