@@ -1,7 +1,7 @@
 (function () {
   "use strict";
 
-  const myImages = ["banner.png", "shirt.jpeg", "one.jpg"];
+  const myImages = ["banner.png", "shirt.jpeg", "brown.jpeg"];
   let currentImage = 0;
 
   document.getElementById("next").onclick = nextPhoto;
