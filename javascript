@@ -78,7 +78,7 @@ CREATING ELEMENTS AND TEXT NODES
 CAPTURING EVENTS WITH JAVASCRIPT
 EVENT LISTENER
 
-- is a function that waits for a specific event to cocur and then respond to the event.
+- is a function that waits for a specific event to occur and then respond to the event.
 - events can be user interactions like clicks, key presses, mouse movements or system events like completion of an asycnhronous operation.
 - to set up an event listener you use addEventListener() method.
 
@@ -102,11 +102,11 @@ Global scope - values in this scope can be accessed anywhere in the script
 Local scope - values are only accessible to the function they are defined in.
   if you forget to use var, let and const - values become global automatical.
 
-  STRATEGIES 
+  STRATEGIES TO PREVENT GLOBAL SCOPE
   - Never use global scope.(avoid as much as possible)
 
  1 ** Namespacing and Closures **
-  IIFE(Immediately Invoked Function Exepression)
+  IIFE(Immediately Invoked Function Exepression) - automatically runs when the page loads
   - Wrap code in an immediately invoked function expression.
   - this anonymous function runs as soon as the script loads and it will also keep variable out of the global scope.
 
