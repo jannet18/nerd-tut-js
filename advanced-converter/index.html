@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h2 class="title">miles to kilometers converter</h2>
+    <div class="section top">
+      <p id="content">Type in a number of miles and click button to convert the distance to kilometers</p>
+      <form action="somephpfile.php" id="convert" method="post">
+        <input
+          type="text"
+          placeholder="distance"
+          name="distance"
+          id="distance"
+        />
+        <input type="submit" name="convertdist" value="Convert Distance" />
+      </form>
+    </div>
+      <div class="section bottom">
+        <h2 id="invisible">Answer goes here</h2>
+      </div>
+     <p class="" id="directions">Press the "K" key to switch to kilometer conversion, press the "M" key to swith to mile conversion.</p>
+    </div>
+    <script src="index.js" defer></script>
+  </body>
+</html>
