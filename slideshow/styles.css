@@ -36,10 +36,10 @@ p {
   background: #a51d1f;
   color: #fff;
 }
-.image {
+img {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: fill;
 }
 /* ANIMATION STYLES */
 .fadeinimg {
