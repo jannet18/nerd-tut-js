@@ -10,7 +10,7 @@
   const form = document.getElementById("convert");
 
   document.addEventListener("keydown", function (e) {
-    var key = e.code;
+    const key = e.code;
     if (key === "KeyK") {
       // change the value of the conversion type
       conversionType = "kilometers";
@@ -30,15 +30,15 @@
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
-    let distance = parseFloat(document.getElementById("distance").value);
+    const distance = parseFloat(document.getElementById("distance").value);
     if (distance) {
       // convert M to K 1.609344
       if (conversionType === "miles") {
-        let conversion = (distance * 1.609344).toFixed(3);
+        const conversion = (distance * 1.609344).toFixed(3);
         answerDiv.innerHTML = `${distance} Miles is equivalent to ${conversion} Kilometers`;
       } else {
         // convert K to Mile 0.621371192
-        let conversion = (distance * 0.621371192).toFixed(3);
+        const conversion = (distance * 0.621371192).toFixed(3);
         answerDiv.innerHTML = `${distance} Kilometers is equivalent to ${conversion} Miles`;
       }
     } else {
