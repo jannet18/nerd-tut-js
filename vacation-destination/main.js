@@ -1,73 +1,77 @@
-const detailsForm = document.getElementById("destination_details_form");
+// const detailsForm = document.getElementById("destination_details_form");
+// detailsForm.addEventListener("submit", handleFormSubmit);
 
-detailsForm.addEventListener("submit", handleSubmit);
+// function handleFormSubmit(e) {
+//   e.preventDefault();
+//   const destName = e.target.elements["name"].value;
+//   const destLocation = e.target.elements["location"].value;
+//   const destPhoto = e.target.elements["photo"].value;
+//   const destDescription = e.target.elements["description"].value;
 
-function handleSubmit(e) {
-  e.preventDefault();
-  //   get input elements from the input fields
-  const destName = e.target.elements["name"].value;
-  const destLocation = e.target.elements["location"].value;
-  const destPhoto = e.target.elements["photo"].value;
-  const destDesc = e.target.elements["description"].value;
-  // clear out input fields
-  for (let i = 0; i < detailsForm.length; i++) {
-    detailsForm.elements[i].value = "";
-  }
-  // create destination card
-  const destCard = createCard(destName, destLocation, destPhoto, destDesc);
-  // display another header
-  // const wishList = document.getElementById('h2')
-  // if (wishList.length === 0){
-  //     wishList.innerHTML = 'My Wish List';
-  // }
+//   for (let i = 0; i < detailsForm.length; i++) {
+//     detailsForm.elements[i].value = "";
+//   }
 
-  document.getElementById("destination_container").appendChild(destCard);
-}
+//   //   create card
+//   const destCard = createDestinationCard(
+//     destName,
+//     destLocation,
+//     destPhoto,
+//     destDescription
+//   );
 
-function createCard(name, location, description, photoURL) {
-  const cardItem = document.createElement("div");
-  cardItem.className = "card";
+//   // append a new heading
+//   const wishList = document.getElementById("destination_container");
+//   if (wishList.children.length === 0) {
+//     document.getElementById("title").innerHTML = "My Wish List";
+//   }
+//   document.getElementById("destination_container").appendChild(destCard);
+// }
 
-  const cardImg = document.createElement("img");
-  cardImg.setAttribute("alt", name);
-  let conImg = "images/tsavoeast.jpeg";
-  if (photoURL.length === 0) {
-    cardImg.setAttribute("src", conImg);
-  } else {
-    cardImg.setAttribute("src", photoURL);
-  }
-  cardItem.appendChild(cardImg);
+// function createDestinationCard(name, location, photoURL, description) {
+//   const card = document.createElement("div");
+//   card.className = "card";
 
-  const cardBody = document.createElement("div");
-  cardBody.className = "card_body";
-  cardItem.appendChild(cardBody);
+//   const cardImg = document.createElement("img");
+//   cardImg.setAttribute("alt", name);
+//   let constantImage = "images/tsavoeast.jpeg";
 
-  const destName = document.createElement("h3");
-  destName.innerHTML = name;
-  cardItem.appendChild(destName);
+//   if (photoURL.length === 0) {
+//     cardImg.setAttribute("src", constantImage);
+//   } else {
+//     cardImg.setAttribute("src", photoURL);
+//   }
+//   card.appendChild(cardImg);
 
-  const destLoc = document.createElement("h4");
-  destLoc.innerText = location;
-  cardItem.appendChild(destLoc);
+//   const cardBody = document.createElement("div");
+//   cardBody.className = "card_body";
+//   card.appendChild(cardBody);
 
-  if (description !== "") {
-    const destDesc = document.createElement("p");
-    destDesc.className = "card_text";
-    destDesc.innerHTML = description;
-    cardItem.appendChild(destDesc);
-  }
+//   const cardTitle = document.createElement("h3");
+//   cardTitle.innerHTML = name;
+//   cardBody.appendChild(cardTitle);
 
-  const deleteBtn = document.createElement("button");
-  deleteBtn.innerText = "Remove";
-  cardItem.appendChild(deleteBtn);
-  deleteBtn.addEventListener("click", handleDelete);
+//   const cardSubtitle = document.createElement("h4");
+//   cardSubtitle.innerHTML = location;
+//   cardBody.appendChild(cardSubtitle);
 
-  function handleDelete(e) {
-    e.preventDefault();
-    const card = e.target.parentElement.parentElement;
-    card.remove();
-  }
+//   if (description !== "") {
+//     const cardText = document.createElement("p");
+//     cardText.className = "card_text";
+//     cardText.innerHTML = description;
+//     card.appendChild(cardText);
+//   }
 
-  cardItem.appendChild(cardBody);
-  return cardItem;
-}
+//   const removeBtn = document.createElement("button");
+//   removeBtn.className = "btn";
+//   removeBtn.innerText = "Remove";
+//   cardBody.appendChild(removeBtn);
+
+//   removeBtn.addEventListener("click", handleRemoveBtn);
+//   function handleRemoveBtn(e) {
+//     e.preventDefault();
+//     const card = e.target.parentElement.parentElement;
+//     card.remove();
+//   }
+//   return card;
+// }

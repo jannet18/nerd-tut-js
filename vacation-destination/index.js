@@ -28,7 +28,6 @@ function handleSubmit(e) {
   if (wishList.children.length === 0) {
     document.getElementById("title").innerHTML = "My Wish List";
   }
-  wishList.innerText;
 
   //   add card
   document.querySelector("#destination_container").appendChild(destCard);
@@ -41,7 +40,7 @@ function createDestinationCard(name, location, photoURL, description) {
   const cardImg = document.createElement("img");
   cardImg.setAttribute("alt", name);
 
-  let constantImg = "images/tsvoeast.jpeg";
+  let constantImg = "images/tsavoeast.jpeg";
 
   if (photoURL.length === 0) {
     cardImg.setAttribute("src", constantImg);
