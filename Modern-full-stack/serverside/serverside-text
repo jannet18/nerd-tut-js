@@ -1,0 +1,78 @@
+NODE AND NPM
+
+- Node allows one to use the same language and knowledge on both client and server.
+- Node is a platform for running primarily, though not exclusively, server-side
+  code that has high performance and is capable of handling large request loads with
+  ease.
+- asynchronous and event driven model of programming.
+- In Node, almost everything you do is nonblocking, meaning code
+  won’t hold up the processing of other request threads.
+
+\*\* NPM (Node Package Manager)
+
+- With it, you can download packages, which are reusable JavaScript modules from a central registry.
+  npm i - modules installed in the current directory. Local cache or Project cache.
+- npm i -g -- modules will be installed outside the current directory and will be shared by all Node Projects.
+- npm ls - lists the installed modules
+- To see the top-leve; modules, wheteher global or local cache you can add --depth=0 to the ls command
+- npm -g ls -- lists whats installed in global cache instead.
+- npm update - updates a given module.
+- npm init to initialize a project package.json file.
+- npm install (module) --save --- to add and save a new module.
+- You can replace --save with --save-dev. This results in devDependancies entry being added to package.json.
+- devDependancies are modules that you only need during development bt which your project code itself doesn't depend on.
+
+Semantic Versioning.
+-The dependancies section also lists the versions of each dependancy, using a technique called semantic versioning.
+
+- SemVer are in the form major, minor and patch.
+- Changes to the minor number are intended to constitute an update that is backwardcompatible but which provides new functionality and, optionally, contains old functionality that while still functional is now deprecated and will be removed in a future release.
+- On top of this, the tilde (~), caret (^), and asterisk (_) characters have special
+  meaning. Tilde is used when dealing with patch versions, while caret is used when dealing with minor versions, and asterisk has the typical “wildcard” meaning you’re probably familiar with in other contexts.
+  “express” : “1.2.3” – NPM will grab this specific version only.
+  • “express”: “~1.2.3” – NPM will grab the most recent patch version.
+  (So, ~1.2.3 will find the latest 1.2.x version but not 1.3.x or anything
+  below 1.2.x.)
+  • “express”: “^1.2.3” – NPM will grab the most recent minor version.
+  (So, ^1.2.3 will find the latest 1.x.x version but not 1.3.x or anything
+  below 1.x.x.)
+  • “express”: “_” – NPM will grab the newest version available. (There is also an explicit latest value that does the same thing.)
+- Callback functions is one mechanism by which Node provides nonblocking functionality, others being promis and asynch/await.
+
+AUDITING PACKAGE SECURITY
+
+- mpm audit - scans your package.json(or global packages if you use -g)
+- npm audit fix - That will cause NPM to update any vulnerable packages with the newest available version that hasn’t had the vulnerability reported in it.
+- to see detailed audit report npm audit --json
+- if you prefer plain text npm audix --readable
+- to see what npm audit fix would do without actually doing it
+  npm audit fix --dry-run
+- npm dedup - The dedup command searches through the tree of packages in node_modules and looks for opportunities where packages can be moved up the tree and shared between dependencies, thereby reducing redundancy and saving space.
+- npm prune - This command will examine the installed packages and look for any that may no longer be needed.
+
+Standard Modules
+File System (fs) module
+
+- Provides you an Api for working with the local file system in a pattern that closely matches that of the standard POSIX functions.
+- fs.copyFile() -- allows you to cpy a file. Asynchronous.
+- fs.copyFileSync() --synchronous method , blocks your code until the operation completes.
+- fs.ReadFile() -- reads a file and passes data from it to a function you supply.
+- fs.WriteFile() -- enables you to write a javascript object that you can JSON.stringify() to marshall into a string to a file.
+- fs.unlink() -- used when you want to delete a file . Also removes symlinks.
+- fs.mkdir() -- method allows you to create directories.
+- fs.rmdir -- to delete a directory.
+- fs.stat() -- gives information about a file or directory,
+  things like its size, last access time, and when it was created.
+- fs.readdir() -- This method allows you to read in the contents of a directory given its path, and returns to you an array of filenames, or an array of Buffer objects containing the names, or an array of fs.Dirent objects, one per file (which you get depends on the options you pass in, with an array of string filenames being the default).
+  \*\* Promises API
+
+HTTP AND HTTPS
+
+- Node is noot exclusively ffor writing servers bt it is the best known for writing web servers.
+  http.server class
+- http.createServer(), .listen().
+- close() method on the the instance to stop it from accepting requests.
+- setTimeOut( ) - to set how long a socket to a client lives for.
+- maxHeadersCount property to limit how many http headers your server will accept.
+- https module builds on the http module and provides the ability to create servers that use TLS to secure connections.
+- The only real difference is some extra information about certificates and keys that you must provide when constructing the server.
