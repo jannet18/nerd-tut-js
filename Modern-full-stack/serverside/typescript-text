@@ -47,3 +47,32 @@
   - module(commonjs) -- specifies the module loader system that will be used . none, commonjs, system, umd, es2015, or esnext
   - strict(true) - enables all strict type-checkin options.
   - esModuleInterop(true) -- enables generation of interoperability code to allow for interoperability between commonjs and es modules via creation of namespace objects for all imports.
+
+*** Types ***
+- 1. String:
+const bestShow = "Babylon 5";
+- typescript infers types automatically but is always better to declare the type;
+const bestShow: string = "Babylon 5";
+- 2. Number:
+- typescript offers a sing;e number type. No integers vs floating pointing values in typescript, they are all simply numbers.
+- literals are values that are directly written into the code and represent themselves. They are not variables or expressions but rather fixed values of a specific type
+- in typescript you can represent hexadecimal(base 16) and octal( base 8) literals using special syntax.
+a) Hexadecimal literals
+- hexadecimal literals are prefixed with `ox` or `OX` followed by a sequence of hexadecimal digits.(0-9. A-F, a-f)
+example const hexValue: number = oxAB // hexadecimal literal representing the value 171 
+b) Octal literals 
+- octal literals are prefixed by `Oo` or `00` followed by a sequence of octal digits (0-7)
+example: const octaValue ; number = Oo52 // octal literal representing value 42
+- 3. Boolean:
+in typescript boolean type is as simple as it get, it has a value of true or false
+const isThisTheBestBook: boolean = true;
+*** NB:***
+- Note that even though 0 and 1 are oftentimes interchangeable for boolean values and
+will be evaluated as boolean values in logic statements in at least some cases, TypeScript
+does not allow it:
+- 4. Any:
+this is a special type that represents a value of any type. often used as a fallback when you dont know or dont want to specify the type of a variable, function, parameter of function return time at compile time.
+- Using the any type effectively removes type checking at compile time, allowing you to bypass TypeScript's static type system. 
+- While any can be useful for interoperating with existing JavaScript code or for scenarios where type information is not available, 
+- it's generally recommended to use it sparingly, as it undermines TypeScript's main feature of static typing, which helps catch type-related errors early in the development process.
+-  Overuse of any can lead to decreased type safety and make code harder to maintain.
