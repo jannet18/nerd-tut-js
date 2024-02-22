@@ -1,0 +1,85 @@
+REACT **\*
+** characteristics \*\*\*
+
+- Views are automatically updated any time their state changes.
+  \*\* - This is termed as a Reactive interface -- essentially means that when the data the interface deals with changes, the interface will update appropriately to reflect it all without the developer having to write code to do so explicitly.
+- High performace.
+  \*\* - React utilizes Virtual DOM to optimize performance.
+
+  - In essence a secondary DOM sits conceptually on top of the real DOM in memory.Rather than manipulate the real DOM directly , you instead allow React to mediate the changes that could occur to the page. React will update the virtual DOM and then it will intelligently figure out via a diffing algorithm, the least amount of real DOM work that can be done to accomplish the update.
+  - most importantly this allows React to batch up real DOM changes and apply them all in one go which is more efficient that doing each one individually. The result is better performance that can typically be achieved with direct DOM manipulation.
+
+- React brings ;
+  an approach ot build components, props, state and style, virtual DOM.
+  ** Components \***
+- Bookmark class is how we define a proper React component, the reason it extends React.Component class.
+- most important xtics is render() method - the only thing a component is required to contain.
+- Responsible for returning ;
+  • Another React component
+  • A React element
+  • An array of either of those
+  • A fragment
+  A portal (a more advanced topic that won’t be covered in this book)
+  • A string or a number (these are rendered as plain text nodes in the DOM)
+  • A boolean or null (results in nothing being rendered)
+
+** Components need information : Props \***
+
+- props short for properties is how information is passed into components.
+  Important to realize about props
+- They are read-only and always passes down from a parent component to a child.
+- props are only given to the child component when it is being created.
+- props are immutable -- they cannot ne modified by the component receiving them
+- props are Javascript objects -- they can contain any type of data like strings, numbers , arrays, functions or even objects.
+- props are declared in JSX- props are declared as attributes in jsx when a component is used.
+  <ChildComponent propName={propValue}/>
+- props can be accessed via the props object.
+  const childComponent = () => {
+  return <div>{props.propName}</div>
+  }
+- Default Props -- components can specify default values for props using 'default props' property.
+  Type checking -- it is good practice to perform type checking on props using PropTypes.
+- Passing Functions as Props -- props can be used to pss functions from parent components to child components allowing for communication between components and enabling callbacks.
+  **_ Components sometimes need Memory: State _**
+  - props are read only and do not change during the life time of a component.if props need to change the component will be destroyed and recreated.
+  - State deals with data more efficiently when it changes.
+  - Changes to state do not cause React to destroy and recreate a component. Instead, it will change just the tiniest portion of the virtual DOM tree that the change demands, and then the minimum real DOM changes will result.
+    **_ Updating State _**
+  - you call setState with an object that represents the updated state or a func that return an updated state based on prev state n props.
+  - setState() -- informs React that the paricular component and its children may need to be re-rendered
+  - takes either a function or an object. If its a function then it is called an updater function. This function receives two arguements the current state of th object and its props.
+    **_ Asynchronous Nature _** - setState is asynchronous meaning React may batch multiple 'setState' calls into a single update for performance reasons. - Because of this you should not rely on the current state immediately after calling setState. instead use the second form of setState that accepst a function if the new state is based on the previous state.
+    this.setState((prevState) => {
+    count: prevState.count + 1
+    })
+    **_ Merging State _** - When you call setState React merges the object you provide into the current state. Meaning you only need to provide the properties you want to update, React will handle merging them with the existing state.
+    **_ Functional Updates _** - setState also accepts a function as an arguement. This function receives the prev state and props. - The function returns an object that will be the new state of the component.
+    this.setState((prevState, props) => {
+    count: prevState.count + props.increament
+    })
+    **_ IMPORTANT _**
+- this function must not mutate the state object passed in, instead it must create a new object and return it.
+
+**_ Stateless Components _**
+
+- called stateless because they do not manage their own state using 'this.state'. Instead they receive data via props and return JSX elements to render UI.
+- often used for simple presentational components that focus on rendering UI based on props.
+- are lightweight, easy to read, and promote a more functional programming style in React applications.
+  **_ Problems in running JS in all browsers _**
+- **_ Solutions _**
+- A polyfill is a piece of code (usually JavaScript on the Web) used to provide modern functionality on older browsers that do not natively support it.(not ideal)
+- Babel allows you to write your code using the new language features you want. What happens next is you run that code through Babel, and Babel takes care of generating the appropriate
+  polyfill code. Babel is considered a transpiler, meaning it transforms and compiles at the same time. That means your workflow is altered: there is now a step you must do before
+  you can actually run your code.
+- npm install --save-dev @babel/core @babel/cli
+  to run npx babel
+- The npx command is something that is installed by newer versions of NPM. It’s anexecutable, installed alongside the npm executable, that is a proxy allowing you to run packages and the CLI tools some packages provide.
+- Babel doesn’t do anything – it doesn’t know how to transform the code. You have to add some plugins to it to give it that knowledge. Plugins are what define the rules for transpiling one language (or version of a language) into another
+- npm install --save-dev @babel/plugin-transform-arrow-functions.
+  **_ Default Props _**
+- parent components always pass props down to their children, which then use them however they wish (or notat all – entirely their choice!). This works great in most cases, but what happens if a component doesn't pass a particular prop down to the child?
+- Nothing enforces a parent passing all props down to its children.
+  **_ Soln _**
+- utilize the OR operator.
+- Default props
+  static defaultProps = {description: "unknown"}

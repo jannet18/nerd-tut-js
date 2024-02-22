@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Intro to React</title>
+    <script
+      crossorigin
+      src="https://unpkg.com/react@16/umd/react.
+development.js"
+    ></script>
+    <script
+      crossorigin
+      src="https://unpkg.com/react-dom@16/umd/react-dom.
+development.js"
+    ></script>
+
+    <script>
+      function start() {
+        class Bookmark extends React.Component {
+          constructor(props) {
+            super(props);
+            console.log("Bookamark component created");
+            this.title = this.props.title;
+          }
+          title = this.props.title;
+          titleStyle = { color: "red" };
+          render() {
+            return React.createElement(
+              "li",
+              {},
+              React.createElement("h2", { style: this.titleStyle }, this.title),
+              React.createElement(
+                "a",
+                { href: this.props.href },
+                this.props.description || "unknown"
+              ),
+              React.createElement(
+                "button",
+                {
+                  onClick: () => {
+                    this.title = this.title + "_CHANGED";
+                    this.setState({});
+                  },
+                },
+                "click me"
+              )
+            );
+          }
+        }
+
+        const rootElement = React.createElement(
+          "div",
+          {},
+          React.createElement("h1", {}, "Bookmarks"),
+          React.createElement(
+            "ul",
+            {},
+            React.createElement(Bookmark, {
+              title: "Etherient",
+              href: "https://www.ethereint.com",
+              description: "The home page of Ethereint",
+            }),
+            React.createElement(Bookmark, {
+              title: "Franks's Site",
+              href: "https://www.zammetti.com",
+              description: "The web home of Frank's w. Zammetti",
+            })
+          )
+        );
+        ReactDOM.render(rootElement, document.getElementById("mainContainer"));
+      }
+
+      //   function start() {
+      //     const rootElement = React.createElement(
+      //       "div",
+      //       {},
+      //       React.createElement("h1", {}, "Bookmarks"),
+      //       React.createElement(
+      //         "ul",
+      //         {},
+      //         React.createElement(
+      //           "li",
+      //           {},
+      //           React.createElement("h2", {}, "Etherient"),
+      //           React.createElement(
+      //             "a",
+      //             { href: "https://www.ethrient.com" },
+      //             "The home page of etherient."
+      //           )
+      //         ),
+      //         React.createElement(
+      //           "li",
+      //           {},
+      //           React.createElement("h2", {}, "Frank's Home"),
+      //           React.createElement(
+      //             "a",
+      //             { href: "https://www.zammetti.com" },
+      //             "The web home page of Frank Zammetti"
+      //           )
+      //         )
+      //       )
+      //     );
+      //     ReactDOM.render(rootElement, document.getElementById("mainContainer"));
+      //   }
+      //   function start() {
+      //     class Bookmark extends React.Component {
+      //       render() {
+      //         return React.createElement(
+      //           "li",
+      //           {},
+      //           React.createElement("h2", {}, this.props.title),
+      //           React.createElement(
+      //             "a",
+      //             { href: this.props.href },
+      //             this.props.description
+      //           )
+      //         );
+      //       }
+      //     }
+
+      //     const rootElement = React.createElement(
+      //       "div",
+      //       {},
+      //       React.createElement("h1", {}, "Bookmarks"),
+      //       React.createElement(
+      //         "ul",
+      //         {},
+      //         React.createElement(Bookmark, {
+      //           title: "Etherient",
+      //           href: "https://www.ethereint.com",
+      //           description: "The home page of Ethereint",
+      //         }),
+      //         React.createElement(Bookmark, {
+      //           title: "Franks's Site",
+      //           href: "https://www.zammetti.com",
+      //           description: "The web home of Frank's w. Zammetti",
+      //         })
+      //       )
+      //     );
+      //     ReactDOM.render(rootElement, document.getElementById("mainContainer"));
+      //   }
+      //
+    </script>
+  </head>
+  <body onLoad="start();">
+    <div id="mainContainer"></div>
+  </body>
+</html>

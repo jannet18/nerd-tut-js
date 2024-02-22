@@ -1,0 +1,49 @@
+- typeScript arguably overcomes many of the perceived shortcomings of JavaScript-based applications.
+- TypeScript can be thought as a wrapper of sorts around JavaScript or an extension to it.
+- key point: - Js code is also valid TypeScript code.
+- TypeScript however adds things on top of JS, the key being data types.Significant benefit because it allows IDEs and other developer tools to provide intellisense to the developer about hints on what data is allowed in what situations.
+- JS is loosely typed nature , mistakes are easy to make.
+- Browsers and node don't understand Js so TypeScript has to be compiled or transpiled in to JavaScript for execution.
+- another big advantage of TypeScript is that it supports more
+  modern JavaScript language features but can compile them down to older versions of JavaScript.
+- TypeScript from the error message is able to know the type of the variable value. This is implicit typing is called type inference.
+- if you declare a variable without initializing it or when a function arguement doesn't specify a type, then TypeScript assumes a specialized type: any. This effectively mimics how Js works in that the variable or arguement can take a value of any tpe at any time.
+  **_ Type inference _**
+- refers to the ability of the compiler to automatically determine the type of a variable based on its initialization value or usage context.
+  -Typescript uses type inference to infer the type of variables , funtion return types, and other expressions whenever explicit type annotations are not provided.
+  **_ Examples _**
+- Variable initialization: - when a variable is declared n initialized in the same statement, typescript infers the type of variable based on the type of initialization value.
+  let x = 10; // typescript infers x to be type number.
+  let y = "hello; // typescript infers y to be a string.
+- Function Retuen Types: - typescript infers the return types of a function based on the types of its return statements.
+- if all return statements in the function are of the same type then typescript infers that as the return type of the function
+  function add(a: number, b: number){
+  return a + b; //typescript infers the return type to be a number.
+  }
+- Usage Context: - typescript infers types of variables based on their usage. if a variable is used in a context that expects a specific type. typescript infers that variables type accordingly.
+  let array = [1, 2, 3];
+  array.push("4); // error arguement of type string is not accessible to parameter of type Number
+- Type Narrowing: - typescript uses control flow analysis to narrow down the types of variables within conditional statements or other control flow constructs. this allows typescript to infer more specific types within those blocks of code.
+  let value = string | number;
+  if (typeod value === "string"){
+  //typescript infers values to be of type string within this block
+  } else {
+  //typescript infers values to be of type number within this block.
+  }
+- type inference helps reduce need for explicit type annotations, making code more consise and readable while still providing type safety through static analysis during compilation.
+- However, explicit type annotations can stil be used to provide clarity, document intent and ensure precise type checking in certain cases.
+
+**_ INSTALLATION _**
+
+- npm install typescript (locally or globally(-g))
+- tsc compiler - acts as a task runner and a bundler.
+- usage (tsc <filename>)
+
+**_ Configuring TypeScript Compilation _**
+
+- tsc init -- creates a tsconfig.json
+- when you run init only this options are enabled.
+  - target(es5) -- specifies the ECMAScript(Js) target version that the generated javascript will adhere to.
+  - module(commonjs) -- specifies the module loader system that will be used . none, commonjs, system, umd, es2015, or esnext
+  - strict(true) - enables all strict type-checkin options.
+  - esModuleInterop(true) -- enables generation of interoperability code to allow for interoperability between commonjs and es modules via creation of namespace objects for all imports.
