@@ -1,0 +1,37 @@
+STATISTICALLY TYPED AND DYNAMICALLY TYPED.
+
+- Refer to different approaches for handling data types in programming languages.
+- These approaches affect how type checking is performed and when type information is verified, which then affects how errors are caught and how code is executed.
+
+**_ STATISTICALLY TYPED _**
+
+- a statistically-typed language is a language where variables types and expressions are known and verified by the compiler before the code is executed.
+- variable types are explicitly declared and checked at compile time.
+- Type errors are caught during compliation process which helps identify potential issues early in the developement cycle and can lead to more robust and predictable code.
+- examples: java, c, c++, Typescript and swift.
+  **_ DYNAMICALLY TYPED _**
+- variable types are not explicitly declared and type checking is performed at runtime, while the program is executing.
+- variables can hold any variables and types are determined dynamically based on the values assigned to them during execution.
+- Dynamically typed languages are often more flexible and consise as they allow implicit type conversions and can be easier to write and prototype.
+- examples: javascript, ruby, php, python.
+
+Brief comparison.
+Statically Typed Languages
+Feature
+
+- Satistically Typed
+- Type Declaration, Explicitly declared
+- Type Checking Performed at compile time
+- Error Detection Errors caught before execution (compile-time)
+- Flexibility and Ease, More verbose, less flexible
+- Examples Java, C, C++, TypeScript, Swift
+
+Dynamically Typed Languages
+Feature
+
+- Dynamically Typed
+- Type Declaration, Not explicitly declared
+- Type Checking Performed at runtime
+- Error Detection Errors may be detected during execution
+- Flexibility and Ease, Less verbose, more flexible
+- Examples JavaScript, Python, Ruby, PHP
