@@ -76,3 +76,53 @@ this is a special type that represents a value of any type. often used as a fall
 - While any can be useful for interoperating with existing JavaScript code or for scenarios where type information is not available, 
 - it's generally recommended to use it sparingly, as it undermines TypeScript's main feature of static typing, which helps catch type-related errors early in the development process.
 -  Overuse of any can lead to decreased type safety and make code harder to maintain.
+- 5: Enums
+-Enums are purely typescript construct. serve to make specific sequence of numbers more human readable and expressive.
+- unlike most typescripts features, Enums are not a type-level addition to javascript but something added to the language at run time.
+- 6. Arrays:
+- just as with variables if you don't specify a type, the type will be inferred from the ninialization values;
+      const pets = ["Smith", "Bruno"];
+      - this pets array becomes an array of strings , you can't later do pets = [42]
+- you can explicitly type an array with just a different syntax for scalar varables.
+      const pets: string[] = ["Bruno", "Tom"]
+- 7: Tuples
+- A turple is an array with specific number of elements with specific types.
+    const authors = [string, number] = ["Frank", 42]
+- Here, we’re saying that the authors array must have two elements, and the first must
+be a string, and the second must be a number. As a result, this will not compile:
+
+*** Function ***
+- typescript lets you declare a function type. this is to say that a variable must reference a function with a particular signature.
+** Object **
+- let person ={
+  firstName : "John", lastName: "sheridan", age: 52
+  }
+  - this means from this point on person may only reference an object with three properties, firsname, lastname and age, they must have types of string, string and number.
+** Null, void and undefined. **
+- Null: is considered a subtype of all other types which means you can assign them to anything.
+    let myFavoriteNumber: number = null;
+    let myFavoriteString: string = null;
+- this examples are applicable.
+- Undefined: is also taken to be a subtype of all other types.
+  let favoriteCar = undefined.
+- Void: - conceptually the opposite of any. it's like having no type at all.
+- typically only seen as the return type of a function, to indicate the function returns no value.
+*** Custome Type Aliases ***
+- typescript offers custom type aliases which lets you define a custom type for a type using the type keyword.
+ type PersonType = {
+  firstName: string, lastName: string, age: number
+ }
+- from then on you can use it like any other type.
+ let Person1: PersonType = {
+  firstName: "Michael", lastName: "Garibaldi", age: 52
+ }
+*** Union Types ***
+- sometimes you'll have situation where you want avariablle to be able to hold one of the severall different types, or you want 
+an arguement to acccept one of various kinds without using any.
+- this type is denoted with a the pipe character.
+let myAge: number | string;
+      myAge = '46',
+      myAge = 46;
+      myAge = true; //this results in to a compiler error.
+
+*** TypeScript == ES6 Features for “Free”! ***
