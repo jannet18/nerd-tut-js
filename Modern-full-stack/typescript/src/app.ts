@@ -1,54 +1,63 @@
-// function sayHi(humanName: string) {
-//   alert(`Hello ${humanName}`);
+// // function sayHi(humanName: string) {
+// //   alert(`Hello ${humanName}`);
+// // }
+// // sayHi("Janet");
+
+// // let age: number = 20;
+// // if (age < 50) age += 10;
+// // console.log(age);
+
+// type Employee = {
+//   readonly id: number;
+//   name: string;
+//   retire: (date: Date) => void;
+// };
+// let employee: Employee = {
+//   id: 1,
+//   name: "Janet",
+//   retire: (date: Date) => {
+//     console.log(date);
+//   },
+// };
+
+// // union types
+// function kgToLbs(weight: number | string): number {
+//   // type narrowing
+//   if (typeof weight === "number") {
+//     return weight * 2.2;
+//   } else {
+//     return parseInt(weight) * 2.2;
+//   }
 // }
-// sayHi("Janet");
+// kgToLbs("10Kg");
+// kgToLbs(10);
 
-// let age: number = 20;
-// if (age < 50) age += 10;
-// console.log(age);
+// // type intersection
+// type Draggable = {
+//   drag: () => void;
+// };
 
-type Employee = {
-  readonly id: number;
-  name: string;
-  retire: (date: Date) => void;
-};
-let employee: Employee = {
-  id: 1,
-  name: "Janet",
-  retire: (date: Date) => {
-    console.log(date);
-  },
-};
+// type Resizable = {
+//   resize: () => void;
+// };
 
-// union types
-function kgToLbs(weight: number | string): number {
-  // type narrowing
-  if (typeof weight === "number") {
-    return weight * 2.2;
-  } else {
-    return parseInt(weight) * 2.2;
-  }
+// type UIWidget = Draggable & Resizable;
+
+// let textBox: UIWidget = {
+//   drag: () => {},
+//   resize: () => {},
+// };
+
+// // literal types (exact ,specific value)
+// type Quantity = 15 | 100;
+// let quantity: Quantity = 100;
+// type Metric = "cm" | "inch";
+
+//  Type aliases
+let myMathFunction: (num1: number, num2: number) => string;
+
+function add(n1: number, n2: number): string {
+  return "" + n1 + n2;
 }
-kgToLbs("10Kg");
-kgToLbs(10);
-
-// type intersection
-type Draggable = {
-  drag: () => void;
-};
-
-type Resizable = {
-  resize: () => void;
-};
-
-type UIWidget = Draggable & Resizable;
-
-let textBox: UIWidget = {
-  drag: () => {},
-  resize: () => {},
-};
-
-// literal types (exact ,specific value)
-type Quantity = 15 | 100;
-let quantity: Quantity = 100;
-type Metric = "cm" | "inch";
+myMathFunction = add;
+console.log(add(5, 6));
