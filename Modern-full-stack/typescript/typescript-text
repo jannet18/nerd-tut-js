@@ -48,81 +48,229 @@
   - strict(true) - enables all strict type-checkin options.
   - esModuleInterop(true) -- enables generation of interoperability code to allow for interoperability between commonjs and es modules via creation of namespace objects for all imports.
 
-*** Types ***
+**_ Types _**
+
 - 1. String:
-const bestShow = "Babylon 5";
+     const bestShow = "Babylon 5";
 - typescript infers types automatically but is always better to declare the type;
-const bestShow: string = "Babylon 5";
+  const bestShow: string = "Babylon 5";
 - 2. Number:
 - typescript offers a sing;e number type. No integers vs floating pointing values in typescript, they are all simply numbers.
 - literals are values that are directly written into the code and represent themselves. They are not variables or expressions but rather fixed values of a specific type
 - in typescript you can represent hexadecimal(base 16) and octal( base 8) literals using special syntax.
-a) Hexadecimal literals
+  a) Hexadecimal literals
 - hexadecimal literals are prefixed with `ox` or `OX` followed by a sequence of hexadecimal digits.(0-9. A-F, a-f)
-example const hexValue: number = oxAB // hexadecimal literal representing the value 171 
-b) Octal literals 
+  example const hexValue: number = oxAB // hexadecimal literal representing the value 171
+  b) Octal literals
 - octal literals are prefixed by `Oo` or `00` followed by a sequence of octal digits (0-7)
-example: const octaValue ; number = Oo52 // octal literal representing value 42
+  example: const octaValue ; number = Oo52 // octal literal representing value 42
 - 3. Boolean:
-in typescript boolean type is as simple as it get, it has a value of true or false
-const isThisTheBestBook: boolean = true;
-*** NB:***
+     in typescript boolean type is as simple as it get, it has a value of true or false
+     const isThisTheBestBook: boolean = true;
+     **_ NB:_**
 - Note that even though 0 and 1 are oftentimes interchangeable for boolean values and
-will be evaluated as boolean values in logic statements in at least some cases, TypeScript
-does not allow it:
+  will be evaluated as boolean values in logic statements in at least some cases, TypeScript
+  does not allow it:
 - 4. Any:
-this is a special type that represents a value of any type. often used as a fallback when you dont know or dont want to specify the type of a variable, function, parameter of function return time at compile time.
-- Using the any type effectively removes type checking at compile time, allowing you to bypass TypeScript's static type system. 
-- While any can be useful for interoperating with existing JavaScript code or for scenarios where type information is not available, 
+     this is a special type that represents a value of any type. often used as a fallback when you dont know or dont want to specify the type of a variable, function, parameter of function return time at compile time.
+- Using the any type effectively removes type checking at compile time, allowing you to bypass TypeScript's static type system.
+- While any can be useful for interoperating with existing JavaScript code or for scenarios where type information is not available,
 - it's generally recommended to use it sparingly, as it undermines TypeScript's main feature of static typing, which helps catch type-related errors early in the development process.
--  Overuse of any can lead to decreased type safety and make code harder to maintain.
+- Overuse of any can lead to decreased type safety and make code harder to maintain.
 - 5: Enums
--Enums are purely typescript construct. serve to make specific sequence of numbers more human readable and expressive.
+  -Enums are purely typescript construct. serve to make specific sequence of numbers more human readable and expressive.
 - unlike most typescripts features, Enums are not a type-level addition to javascript but something added to the language at run time.
 - 6. Arrays:
 - just as with variables if you don't specify a type, the type will be inferred from the ninialization values;
-      const pets = ["Smith", "Bruno"];
-      - this pets array becomes an array of strings , you can't later do pets = [42]
+  const pets = ["Smith", "Bruno"]; - this pets array becomes an array of strings , you can't later do pets = [42]
 - you can explicitly type an array with just a different syntax for scalar varables.
-      const pets: string[] = ["Bruno", "Tom"]
+  const pets: string[] = ["Bruno", "Tom"]
 - 7: Tuples
 - A turple is an array with specific number of elements with specific types.
-    const authors = [string, number] = ["Frank", 42]
+  const authors = [string, number] = ["Frank", 42]
 - Here, we’re saying that the authors array must have two elements, and the first must
-be a string, and the second must be a number. As a result, this will not compile:
+  be a string, and the second must be a number. As a result, this will not compile:
 
-*** Function ***
+**_ Function _**
+
 - typescript lets you declare a function type. this is to say that a variable must reference a function with a particular signature.
-** Object **
+  ** Object **
 - let person ={
   firstName : "John", lastName: "sheridan", age: 52
   }
   - this means from this point on person may only reference an object with three properties, firsname, lastname and age, they must have types of string, string and number.
-** Null, void and undefined. **
+    ** Null, void and undefined. **
 - Null: is considered a subtype of all other types which means you can assign them to anything.
-    let myFavoriteNumber: number = null;
-    let myFavoriteString: string = null;
+  let myFavoriteNumber: number = null;
+  let myFavoriteString: string = null;
 - this examples are applicable.
 - Undefined: is also taken to be a subtype of all other types.
   let favoriteCar = undefined.
 - Void: - conceptually the opposite of any. it's like having no type at all.
 - typically only seen as the return type of a function, to indicate the function returns no value.
-*** Custome Type Aliases ***
+  **_ Custome Type Aliases _**
 - typescript offers custom type aliases which lets you define a custom type for a type using the type keyword.
- type PersonType = {
+  type PersonType = {
   firstName: string, lastName: string, age: number
- }
+  }
 - from then on you can use it like any other type.
- let Person1: PersonType = {
+  let Person1: PersonType = {
   firstName: "Michael", lastName: "Garibaldi", age: 52
- }
-*** Union Types ***
-- sometimes you'll have situation where you want avariablle to be able to hold one of the severall different types, or you want 
-an arguement to acccept one of various kinds without using any.
+  }
+  **_ Union Types _**
+- sometimes you'll have situation where you want avariablle to be able to hold one of the severall different types, or you want
+  an arguement to acccept one of various kinds without using any.
 - this type is denoted with a the pipe character.
-let myAge: number | string;
-      myAge = '46',
-      myAge = 46;
-      myAge = true; //this results in to a compiler error.
+  let myAge: number | string;
+  myAge = '46',
+  myAge = 46;
+  myAge = true; //this results in to a compiler error.
 
-*** TypeScript == ES6 Features for “Free”! ***
+**_ TypeScript == ES6 Features for “Free”! _**
+The let and const keywords.
+
+- let for variables you want to be able to change the value of later.
+- const for those you don't want to change the value of.
+- you can use var, but it is suggested you dont since let and const have block level scope rather than var global scope which helps avoid alot of bugs.
+
+**_ Block Scope _**
+
+- variables for a long time could only be decalred outside of any function. Such variables have function scope (or global scope when declared outside of any function)
+  function test(){
+  if (true){
+  var greeting = "hello";
+  }
+  alert(greeting);
+  }
+  test() // the value of greeting is accessible despite being declared in the if block. - with let, that problem is solved.
+- **_ Arrow Functions _**
+- provide brevity.(consise and exact use of words in writing).
+- That distinction probably goes to how the keyword this is handled. In plain JavaScript,
+  what this points to can vary depending on how functions are called.
+- With arrow functions, though, lexical scope is used, which means that whatever contains the
+  function is what this will point to at execution time. If the function is in global scope,
+  then this will point to the window object (assuming we’re executing in a browser). If the
+  function is inside an object, then this will point to that object. It’s simple and consistent,
+  and TypeScript makes it available to you!
+
+**_ Default Paramaters _**
+
+- with typescript you can also use default parameters values.
+  const multNums = (a:number, b: number= 10): number => a \* b;
+  alert(multNums(3)) - here , we are saying if the second number is not supplied when the function is called, then it should have the default value.
+
+**_ Template literals _**
+
+- alert(`Hello, ${name.toUpperCase().substr(2)}`)
+- with template literals you can span multiple lines of source code.
+  **_ Spread and Rest (bonus option: agrguements) _**
+- the spread operator allows an iterable item things like strings or arrays to be expanded in places where zero or more arguements(in the case of function calls) or elements(for array literals) are expected, or an object expression to be expanded in places where zero or more key-value pairs (for object literals ) are expected.
+  const addNums = (a:number, b:number) number => a+ b;
+  const nums: number[] = [5,6];
+  alert(addNums(...nums)) - the idea here is that we want to "spread" the values in the nums array into the arguements passed to addNums. - this is incontrast to writing sth like
+  alert(addNums(nums[0], nums[1])) - However, if you try that code, you’ll find that there is an error on the ...nums spread
+  argument passed to addNums() that says “Expected 2 arguments, but got 0 or more”. The
+  issue here is that because there’s a variable number of possible arguments, TypeScript
+  can’t make a proper determination about what to do. Fortunately, there are at least two
+  ways to fix this. First, you could do this:
+  const addNums = (a?: number, b?: number): number => a + b;
+  const nums: number[] = [ 5, 6 ];
+  alert(addNums(...nums));
+- The other way you could fix this is by the use of the rest operator, which is simply the
+  spread operator in a different place:
+  const addNums = (...a: number[]): number =>
+  a.reduce((acc, val) => acc + val);
+  const nums: number[] = [ 5, 6 ];
+  alert(addNums(...nums));
+- Any argument prefixed with the … operator means that zero or more arguments can
+  be in that place. The result is that you’ll get an array inside the function, named as the
+  argument is named, that contains all passed in values in that place. As with optional
+  arguments, rest arguments must come last. With this approach, given we have an array,
+  we can use the reduce() method to add up all the numbers passed in. In contrast to the
+  optional argument approach, this solution results in all the numbers being added, no
+  matter how many are passed in, so it is functionally different, and therefore, which way
+  you go depends on what you’re trying to do.
+
+**_ Destructuring _**
+
+- typescript supports two forms of destruturing: array and object.
+  Object:
+  const person = {
+  firstName: "Billy", lastName: "Joel", age: 70
+  } - now if you want to grab the values out of that object, you might do;
+  const firstName = person.firstName;
+  const lastName = person.lastName;
+  const age = person.age; - this works , bt destructuring is way better.we can get this data more consisely.
+  const {firstName, lastName, age} = person; - now you will have three seperate variables named as above and their values will be taken from the person object.
+  Arrays: can be destructured the same way;
+  const vals = ["Billy", "Joel", 70];
+  const [firstName, lastName, age] = vals;
+  alert(firstName) - here of course its based on order: Typescript is essentially just doing firstName=vals[0], lastName=vals[1], and age=vals[2];
+  NB::Question::
+- how to swap the value of two variables without using a third variable;
+  let x = 1;
+  let y= 2;
+  [x,y] =[y,x];
+  alert(x); // 2
+  alert(y); // 1 - here the array being destructured is created on the fly on the right hndside of the equals.
+
+**_ Classes _**
+
+- typescript supports classes , but alters the syntax a bit.
+  Properties:
+- with properties rather than having to declare them in a constructor, you can do it a diiferrent way.
+  class Planet {
+  constructor (){
+  this.name = null;
+  this.mass = null;
+  }
+  }
+  you can instead do this;
+  class Planet{
+  name: string,
+  mass: number;
+  }
+- as you would expect , you can declare your types for the properties as would in typescript generally, but now you dont need to embed them in constructor.
+- you can have a constructor that looks the same in javascript but your property declarations are external to the constructor now, if you supply one at all
+- Naturally if you want to set property values at construction time, then you can still do that in the constructor.
+  class Planet {
+  name: string,
+  mass: number,
+  constructor (inName: string, inMass: number) {
+  this.name = inName;
+  this.mass = inMass;
+  }
+  }
+
+**_ Member Visibity _**
+
+- you can use typescript to control whether certain methods or properties are visible to code outside the class.
+  Public:
+- the default visibility of class members is public. they can be accessed anywhere.
+  Protected:
+- protected members are only visible to subclasses of the class they declared in.
+  Private:
+- private is like protected but does not allow access to the memebr even from subclasses.
+  **_ Inheritance _**
+- inheritance is one of the core concepts of object-oriented programming (OOPS).
+- it is the mechanism in which one class derives the properties of another class.
+- the class which inherits properties and methods is called the child class.
+- the class whose properties and methods are inherited are called parent class.
+- inheritance allows a class to reuse the functionality of an existing class without rewriting it.
+- class inherits another class using `extends` keyword.
+- typescript supporst single inheritance and multilevel inheritance.
+
+**_ Getters and Setters _**
+
+- they provide a way to access the properties of an object.
+- Getter:- this method comes when you want to access any property of an object. Also called accessor.
+- Setter:- this method comes when you want to change any property of an object. also called mutator.
+
+**_ Static Members _**
+
+- a static prperty in a class is a property that belongs to the class itself rather than to instances of the class.
+- it is shared among all instances of the class and can be accessed without creating an instance of the class.
+  **_ Abstract classes _**
+- An abstract class is simply one that cannot be instantiated.
+- always meant to be a base class that others extend from.
+- they serve a similar function as interface , but the primary difference is that an abstract class can provide some amount of implementation for methods while an interface cannot.

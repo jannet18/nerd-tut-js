@@ -100,28 +100,36 @@ PREVENTING DEFAULT BEHAVIOUR
 **_ SCOPE IN JAVASCRIPT _**
 Global scope - values in this scope can be accessed anywhere in the script
 Local scope - values are only accessible to the function they are defined in.
-  if you forget to use var, let and const - values become global automatical.
+if you forget to use var, let and const - values become global automatical.
 
-  STRATEGIES TO PREVENT GLOBAL SCOPE
-  - Never use global scope.(avoid as much as possible)
+STRATEGIES TO PREVENT GLOBAL SCOPE
 
- 1 ** Namespacing and Closures **
-  IIFE(Immediately Invoked Function Exepression) - automatically runs when the page loads
-  - Wrap code in an immediately invoked function expression.
-  - this anonymous function runs as soon as the script loads and it will also keep variable out of the global scope.
+- Never use global scope.(avoid as much as possible)
 
-2 ** Strategy 2 'use strict' directive
+1 ** Namespacing and Closures **
+IIFE(Immediately Invoked Function Exepression) - automatically runs when the page loads
+
+- Wrap code in an immediately invoked function expression.
+- this anonymous function runs as soon as the script loads and it will also keep variable out of the global scope.
+
+2 \*\* Strategy 2 'use strict' directive
+
 - helps cut down on accidential declarations of varibles without using the var keyword.
-IIFE AND 'USE STRICT' TOGETHER -- RECOMMENDED.
+  IIFE AND 'USE STRICT' TOGETHER -- RECOMMENDED.
 
-3 ** Using const and let instead of var ** 
+3 ** Using const and let instead of var **
+
 - they both help minimize the chances that a variable holds an unexpected value.
 
 HOISTING IN JAVASCRIPT
 ** var**
-- by default javascript hoist variables. this means you can use them before you specifically declare them. 
-- this can lead to unexpected results.
-You should declare variable first
-const and let are not hoisted.
 
- 
+- by default javascript hoist variables. this means you can use them before you specifically declare them.
+- this can lead to unexpected results.
+  You should declare variable first
+  const and let are not hoisted.
+
+  **_ this _**
+
+- in javascript `this` keyword is a special identifier that refers to the current execution context.
+- the value of `this` is determined by how a function is called or how an object is invoked.
